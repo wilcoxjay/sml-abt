@@ -8,6 +8,7 @@ sig
 
   val name : t -> string
   val toString : t -> string
+  val toString' : t -> string
 
   val clone : t -> t
   val prime : t -> t

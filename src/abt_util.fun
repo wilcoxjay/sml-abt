@@ -77,12 +77,12 @@ struct
 
   fun toStringOpen F e =
     case out e of
-      ` v => Variable.toString v
+      ` v => Variable.toString' v
     | v \ e =>
         let
           val v_str =
             if hasFree (e, v) then
-              Variable.toString v
+              Variable.toString' v
             else
               "_"
         in

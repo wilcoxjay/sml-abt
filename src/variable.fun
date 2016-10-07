@@ -43,6 +43,12 @@ struct
     case s of
          NONE => "@" ^ Int.toString x
        | SOME s' => s'
+
+  fun toString' (s, x) =
+    case s of
+         NONE => "@" ^ Int.toString x
+       | SOME s' => s' ^ "@" ^ Int.toString x
+
 end
 
 structure StringVariable : VARIABLE =
@@ -53,6 +59,7 @@ struct
   val compare = String.compare
   fun name x = x
   fun toString x = x
+  fun toString' x = x
   fun clone x = x
   fun prime x = x ^ "'"
 end
